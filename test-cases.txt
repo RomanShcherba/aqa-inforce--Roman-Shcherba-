@@ -1,0 +1,134 @@
+Test Cases
+
+TC_UI_01: Book room with valid data
+Preconditions:
+-User page is opened
+
+Steps:
+1. Open user page
+2. Select available room
+3. Select valid dates
+4. Enter valid personal data
+5. Click Book button
+
+Expected Result:
+- Booking is successful
+- Confirmation message is displayed
+
+Test data
+Firstname: Andrew
+Lastname: Satory
+Email: qwerty@gmail.com
+Phone:+380952553232
+
+TC_UI_02: Book room with blank fields
+Steps:
+1. Open user page
+2. Select room
+3. Leave blank fields
+4. Click Book
+
+Test data
+Firstname: Blank
+Lastname: Blank 
+Email: Blank 
+Phone: Blank 
+
+Expected Result:
+- Validation error is shown
+
+TC_UI_03: Book room with fields less than 3 characters
+Steps:
+1. Open user page
+2. Select room
+3. Fill Firstname field with 2 characters
+4. Fill Lastname field with 2 characters
+5. Click Book
+
+Test data
+Firstname: Jo
+Lastname: Jo 
+Email: qwerty@gmail.com
+Phone: +380952553232
+
+Expected Result:
+- Validation error for Firstname and Lastname is shown
+
+TC_UI_04: Book room with Name and Lastname more than valid range characters
+Steps:
+1. Open user page
+2. Select room
+3. Fill Firstname field with 19 characters
+4. Fill Lastname field with 31 characters
+5. Click Book
+
+Test data
+Firstname: wwwwwwwwwwwwwwwwwww
+Lastname: wwwwwwwwwwwwwwwwwwwwwwwwwwwwwww 
+Email: qwerty@gmail.com
+Phone: +380952553232
+
+Expected Result:
+- Validation error for Firstname and Lastname is shown
+
+TC_UI_04: Book room with a bad-formed email address
+Steps:
+1. Open user page
+2. Select room
+3. Fill Firstname field with 3 characters
+4. Fill Lastname field with 3 characters
+5. fill invalid email address
+6. Click Book
+
+Test data
+Firstname: Joe
+Lastname: Joe
+Email: qwerty
+Phone: +380952553232
+
+Expected Result:
+- Validation error for email is shown
+
+TC_UI_05: Book room with a 10 characters of phone number
+Steps:
+1. Open user page
+2. Select room
+3. Fill Firstname field with 3 characters
+4. Fill Lastname field with 3 characters
+5. Fill phone number with 10 characters
+6. Click Book
+
+Test data
+Firstname: Joe
+Lastname: Joe
+Email: qwerty@gmail.com
+Phone: 1234567890
+
+Expected Result:
+- Validation error for phone number is shown
+
+TC_UI_06: Book room with a 10 characters of phone number
+Steps:
+1. Open user page
+2. Select room
+3. Fill Firstname field with 3 characters
+4. Fill Lastname field with 3 characters
+5. Fill phone number with 22 characters
+6. Click Book
+
+Test data
+Firstname: Joe
+Lastname: Joe
+Email: qwerty@gmail.com
+Phone: 11234567890123456789012
+
+Expected Result:
+- Validation error for phone number is shown
+
+TC_UI_07: Booked dates are unavailable
+Steps:
+1. Book a room
+2. Try to book the same room for same dates
+
+Expected Result:
+- Dates are disabled/unavailable
